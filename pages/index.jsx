@@ -1,7 +1,9 @@
+import { Avatar } from "@/Components/Avatar";
 import { Card } from "@/Components/card";
 import { FormCard } from "@/Components/hostFormcard";
 
 import { Navigation } from "@/Components/Navigation";
+import { PostCard } from "@/Components/PostCardlayout";
 
 export default function Home() {
   return (
@@ -11,7 +13,9 @@ export default function Home() {
       </div>
       <div className="grow">
         <FormCard />
-        <Card>post</Card>
+        <Card>
+          <PostCard />
+        </Card>
       </div>
     </div >
   )

@@ -3,14 +3,13 @@ import { Card } from './card'
 import { BsPeople } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { TbMoodCheck } from "react-icons/tb";
+import { Avatar } from './Avatar';
 
 export const FormCard = () => {
     return (
         <Card><div className="flex gap-3">
             <div>
-                <div className="w-12 rounded-full overflow-hidden">
-                    <img src='https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80' alt='image' />
-                </div>
+                <Avatar />
             </div>
             <textarea className='grow p-2' placeholder='what is on your mind? GK'></textarea>
         </div>
