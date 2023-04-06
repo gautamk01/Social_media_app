@@ -10,12 +10,11 @@ import Link from 'next/link';
 
 export const PostCard = () => {
     const [boxer, setboxer] = useState(false)
-    console.log(boxer)
     return (
         <div>
             <div className="flex flex-row gap-3 ">
                 <div >
-                    <Link href={'/'}><span className=' cursor-pointer'><Avatar /></span></Link></div>
+                    <Link href={'/profile'}><span className=' cursor-pointer'><Avatar /></span></Link></div>
                 <div className='grow'><p><Link href={'/profile'} className="font-semibold cursor-pointer hover:underline">Jhone Doe</Link> Shared a <a className=" text-cyan-500"> Post</a></p>
                     <p className="Text-gray-500"> 2 hours ago</p></div>
                 <div className=''><button onClick={() => { setboxer(!boxer) }}>More</button>

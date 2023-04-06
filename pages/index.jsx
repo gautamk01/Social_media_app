@@ -13,7 +13,7 @@ export default function Home() {
       </div>
       <div className="grow">
         <FormCard />
-        <Card>
+        <Card >
           <PostCard />
         </Card>
       </div>
