@@ -11,7 +11,7 @@ export const FormCard = () => {
             <div>
                 <Avatar />
             </div>
-            <textarea className='grow p-2' placeholder='what is on your mind? GK'></textarea>
+            <textarea className='grow p-2 border border-gray-200 rounded-md' placeholder='what is on your mind? GK'></textarea>
         </div>
             <div className="flex flex-wrap items-center justify-center mt-3 gap-4">
                 <button className='flex flex-wrap items-center justify-center p-2 gap-1'><BsPeople />People</button>
