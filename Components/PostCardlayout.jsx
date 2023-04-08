@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Avatar } from './Avatar'
-
 import { BsPeople } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { Moreon } from './morecomp';
 import Link from 'next/link';
 import { Card } from 'flowbite-react';
+import Image from 'next/image'
 
 
 
@@ -25,7 +25,7 @@ export const PostCard = (props) => {
             <div className="my-3 mx-3 p-4">
                 <p>{props.Content}</p>
                 <div className='m-3'>
-                    <img src="https://images.unsplash.com/photo-1492666673288-3c4b4576ad9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" />
+                    <Image alt='landscape' src="https://images.unsplash.com/photo-1492666673288-3c4b4576ad9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" />
                 </div>
             </div>
             <div className='flex flex-wrap items-center  mt-3 gap-4'>

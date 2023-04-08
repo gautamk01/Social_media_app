@@ -16,8 +16,8 @@ export default function Home() {
 
 
   useEffect(() => {
-    fetchposter()
-  }, [])
+    fetchposter();
+  });
 
 
   if (!session) return (<LoginPage />)

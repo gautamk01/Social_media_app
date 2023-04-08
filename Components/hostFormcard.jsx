@@ -19,7 +19,8 @@ export const FormCard = (props) => {
                 setProfile(result.data[0])
             }
         })
-    }, []);
+    }, [supabase, session.user.id]);
+
 
     if (!Profile) return (<div className='flex flex-wrap items-center justify-center m-4'><Loading /></div>)
 

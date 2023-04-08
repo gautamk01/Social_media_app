@@ -21,7 +21,7 @@ export const ProfileHeader = () => {
 
         <Card nopadding={true}>
             <div className='z-10 h-44 overflow-hidden flex flex-wrap items-center justify-center '>
-                <img className='  relative bottom-20' src='https://images.unsplash.com/photo-1614102073832-030967418971?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' />
+                <image className='  relative bottom-20' src='https://images.unsplash.com/photo-1614102073832-030967418971?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' />
             </div>
             <div className="flex ">
                 <div className=' z-20 relative bottom-14 p-4  h-10 '>
