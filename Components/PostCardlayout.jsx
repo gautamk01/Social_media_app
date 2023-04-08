@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Avatar } from './Avatar'
-import { AiOutlineHeart } from "react-icons/Ai";
+
 import { BsPeople } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { Moreon } from './morecomp';
 import Link from 'next/link';
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 import { Card } from 'flowbite-react';
 
 
@@ -30,7 +29,7 @@ export const PostCard = (props) => {
                 </div>
             </div>
             <div className='flex flex-wrap items-center  mt-3 gap-4'>
-                <button className='flex flex-wrap items-center justify-center p-2 gap-1'><AiOutlineHeart />72</button>
+                <button className='flex flex-wrap items-center justify-center p-2 gap-1'>72</button>
                 <button className='flex flex-wrap items-center justify-center p-2 gap-1'><BsPeople />11</button>
                 <button className='flex flex-wrap items-center justify-center p-2 gap-1'><GoLocation />4</button>
             </div>

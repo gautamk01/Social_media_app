@@ -16,13 +16,13 @@ export default function Home() {
 
 
   useEffect(() => {
-    fetchpost()
+    fetchposter()
   }, [])
 
 
   if (!session) return (<LoginPage />)
 
-  function fetchpost() {
+  function fetchposter() {
     supabase.from('posts').select('id,Content,created_at,profiles(id,avatar,name)').order('created_at', { ascending: false }).then(result => {
       setpostcollection(result.data)
     })
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout>
       <div className="grow">
-        <FormCard onposting={fetchpost} />
+        <FormCard onposting={fetchposter} />
         {postcollection?.map((post, key) => (<PostCard key={key} {...post} />))}
 
       </div>
