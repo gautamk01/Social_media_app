@@ -5,10 +5,10 @@ import { GoLocation } from "react-icons/go";
 import { TbMoodCheck } from "react-icons/tb";
 import { Avatar } from './Avatar';
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
-import { Alert } from "flowbite-react";
+
 import { Loading } from './simpleCompo/loading';
 
-export const FormCard = () => {
+export const FormCard = (props) => {
     const [Profile, setProfile] = useState(null);
     const [content, setcontent] = useState('');
     const supabase = useSupabaseClient();
@@ -25,8 +25,17 @@ export const FormCard = () => {
 
     function createpost() {
         supabase.from('posts').insert({ Content: content, author: session.user.id })
-            .then(response => { console.log(response) });
-        setcontent('');
+            .then(response => {
+                if (!response.error) {
+                    if (props.onposting) {
+                        props.onposting()
+                    }
+                    setcontent('');
+                }
+
+            });
+
+
     }
 
 
