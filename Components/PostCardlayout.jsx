@@ -15,7 +15,7 @@ export const PostCard = (props) => {
         <Card>
             <div className="flex flex-row gap-3 ">
                 <div >
-                    <Link href={'/profile'}><span className=' cursor-pointer'><Avatar url={props.profiles.avatar} /></span></Link></div>
+                    <Link href={'/profile'}><span className=' cursor-pointer'><Avatar url={props?.profiles?.avatar} /></span></Link></div>
                 <div className='grow'><p><Link href={'/profile'} className="font-semibold cursor-pointer hover:underline">{props.profiles.name}</Link> Shared a <a className=" text-cyan-500"> Post</a></p>
                     <p className="Text-gray-500">2 hours ago</p></div>
                 <div className=''><button onClick={() => { setboxer(!boxer) }}>More</button>
