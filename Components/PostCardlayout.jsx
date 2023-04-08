@@ -1,22 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Avatar } from './Avatar'
 import { AiOutlineHeart } from "react-icons/Ai";
 import { BsPeople } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { Moreon } from './morecomp';
 import Link from 'next/link';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 
 
 
 export const PostCard = () => {
+
+
     const [boxer, setboxer] = useState(false)
     return (
         <div>
             <div className="flex flex-row gap-3 ">
                 <div >
                     <Link href={'/profile'}><span className=' cursor-pointer'><Avatar /></span></Link></div>
-                <div className='grow'><p><Link href={'/profile'} className="font-semibold cursor-pointer hover:underline">Jhone Doe</Link> Shared a <a className=" text-cyan-500"> Post</a></p>
-                    <p className="Text-gray-500"> 2 hours ago</p></div>
+                <div className='grow'><p><Link href={'/profile'} className="font-semibold cursor-pointer hover:underline"></Link> Shared a <a className=" text-cyan-500"> Post</a></p>
+                    <p className="Text-gray-500">2 hours ago</p></div>
                 <div className=''><button onClick={() => { setboxer(!boxer) }}>More</button>
                     {boxer ? <Moreon /> : <></>}
                 </div>

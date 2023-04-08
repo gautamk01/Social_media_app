@@ -6,12 +6,18 @@ import { BsFilePostFill } from "react-icons/bs";
 import { GrNotification, GrLogout } from "react-icons/gr";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useSupabaseClient } from '@supabase/auth-helpers-react';
 
 export const Navigation = () => {
     const router = useRouter();
     const { pathname } = router;
     const nonactiveElementClasses = 'flex flex-row items-center m-2 py-2 px-3 transition-all hover:shadow-md hover:scale-101 hover:px-16  hover:-mx-6'
     const activeElementClasses = "flex flex-row items-center m-2 py-2 px-16 -mx-6 bg-blue-200 rounded-sm"
+    const supabase = useSupabaseClient();
+    async function logout() {
+        await supabase.auth.signOut();
+    }
+
     return (
         <Card >
             <div className='w-[200px]'>
@@ -20,7 +26,7 @@ export const Navigation = () => {
                 <Link href="/profile/friends" className={pathname === '/profile/friends' ? activeElementClasses : nonactiveElementClasses}><FaUserFriends className="mr-1" />Friends</Link>
                 <Link href="" className={nonactiveElementClasses}><BsFilePostFill className="mr-1" />Save Post</Link>
                 <Link href="/notification" className={pathname === '/notification' ? activeElementClasses : nonactiveElementClasses}><GrNotification className="mr-1 " />Notification</Link>
-                <Link href="/login" className={nonactiveElementClasses}><GrLogout className="mr-1" />Log out</Link>
+                <button onClick={logout} className={nonactiveElementClasses}><span className='flex items-center px-2 w-[210px]'><GrLogout className="mr-1" />Log out</span></button>
             </div>
         </Card >
     )
