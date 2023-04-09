@@ -18,9 +18,9 @@ export default function Home() {
   useEffect(() => {
     fetchposter();
   });
-
-
   console.log(session)
+
+  if (!session) return (<LoginPage />)
 
   function fetchposter() {
     supabase.from('posts').select('id,Content,created_at,profiles(id,avatar,name)').order('created_at', { ascending: false }).then(result => {
