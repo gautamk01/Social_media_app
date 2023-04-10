@@ -18,7 +18,7 @@ export default function Home() {
   useEffect(() => {
     fetchposter();
   });
-  console.log(session)
+
 
   if (!session) return (<LoginPage />)
 
@@ -32,6 +32,7 @@ export default function Home() {
     <Layout>
       <div className="grow">
         <FormCard onposting={fetchposter} />
+        {!postcollection && <div>hello</div>}
         {postcollection?.map((post, key) => (<PostCard key={key} {...post} />))}
 
       </div>

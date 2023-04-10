@@ -8,6 +8,15 @@ module.exports = {
 ],
   theme: {
     extend: {
+      keyframes: {
+        bounce: {
+          '0%': { top: '0px' },
+          '50%': { top: '60px' },
+          '100%': { top: '0px' },
+        }
+      },animation: {
+        pulse: 'bounce 1s ',
+      },
       colors: {
         socialBg:'#F5F7FB',
         socialBlue:'#218DFA',
