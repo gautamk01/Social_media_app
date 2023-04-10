@@ -5,7 +5,6 @@ import { GoLocation } from "react-icons/go";
 import { TbMoodCheck } from "react-icons/tb";
 import { Avatar } from './Avatar';
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
-
 import { Loading } from './simpleCompo/loading';
 import { AlerterError, AlerterSuccess } from './simpleCompo/alerter';
 
@@ -16,6 +15,7 @@ export const FormCard = (props) => {
     const [Error, setError] = useState(0);
     const supabase = useSupabaseClient();
     const session = useSession();
+
     useEffect(() => {
         supabase.from('profiles').select().eq('id', session.user.id).then(result => {
             if (result.data.length) {
@@ -24,7 +24,7 @@ export const FormCard = (props) => {
         })
 
 
-    }, [supabase, session.user.id]);
+    }, []);
 
 
     if (!Profile) return (<div className='flex flex-wrap items-center justify-center m-4'><Loading /></div>)
