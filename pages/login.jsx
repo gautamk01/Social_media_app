@@ -7,7 +7,10 @@ import Link from "next/link";
 export default function LoginPage() {
     const supabase = useSupabaseClient();
     async function loginWithGoogle() {
-        await supabase.auth.signInWithOAuth({ provider: "google" });
+        await supabase.auth.signInWithOAuth({
+            provider: "google",
+            redirect_uri: 'https://vacwjjjzrybqttswslsf.supabase.co/auth/v1/callback'
+        });
     }
     return (
 
