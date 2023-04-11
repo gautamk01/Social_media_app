@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Avatar } from './Avatar'
 import { BsPeople } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
@@ -6,10 +6,11 @@ import { Moreon } from './morecomp';
 import Link from 'next/link';
 import { Card } from './card';
 import TimeAgo from "react-timeago";
-
+import { UserContext } from './Contexts/UserContext';
 
 
 export const PostCard = (props) => {
+    const { Profile: myprofile } = useContext(UserContext);
     const [boxer, setboxer] = useState(false)
     return (
         <Card>
@@ -33,12 +34,12 @@ export const PostCard = (props) => {
             <div className='flex flex-wrap items-center  mt-3 gap-4'>
                 <button className='flex flex-wrap items-center justify-center p-2 gap-1'>72</button>
                 <button className='flex flex-wrap items-center justify-center p-2 gap-1'><BsPeople />11</button>
-                <button className='flex flex-wrap items-center justify-center p-2 gap-1'><GoLocation />4</button>
+                <button className='flex flex-wrap item  s-center justify-center p-2 gap-1'><GoLocation />4</button>
             </div>
-            {/* <div className='flex gap-3'>
-                <div><Avatar /></div>
+            <div className='flex gap-3'>
+                <div><Avatar url={myprofile?.avatar} /></div>
                 <textarea className='grow border border-gray-400 rounded-[12px] h-10 px-4 p-1' placeholder='Leave a Comment'></textarea>
-            </div> */}
+            </div>
         </Card>
     )
 }

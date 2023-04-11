@@ -6,6 +6,7 @@ import LoginPage from "./login";
 import { Layout } from "@/Components/profilePage/layout";
 import { useEffect, useState } from "react";
 import { Loading } from "@/Components/simpleCompo/loading";
+import { UserContext } from "@/Components/Contexts/UserContext";
 // import TimeAgo from 'javascript-time-ago';
 // import en from 'javascript-time-ago/locale/en';
 
@@ -14,13 +15,24 @@ import { Loading } from "@/Components/simpleCompo/loading";
 
 export default function Home() {
   const session = useSession();
+  const [Profile, setProfile] = useState(null);
   const supabase = useSupabaseClient();
   const [postcollection, setpostcollection] = useState();
 
-
   useEffect(() => {
     fetchposter();
-  });
+  }, [])
+  useEffect(() => {
+    if (!session?.user?.id) {
+      return;
+    }
+
+    supabase.from('profiles').select().eq('id', session?.user?.id).then(result => {
+      if (result.data?.length) {
+        setProfile(result.data[0])
+      }
+    })
+  }, [session?.user?.id]);
 
 
   if (!session) return (<LoginPage />)
@@ -33,12 +45,15 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="grow">
-        <FormCard onposting={fetchposter} />
-        {!postcollection && <div className='flex flex-wrap items-center justify-center m-4'><Loading /></div>}
-        {postcollection?.map((post, key) => (<PostCard key={key} {...post} />))}
+      <UserContext.Provider value={{ Profile: Profile }}>
+        <div className="grow">
+          <FormCard onposting={fetchposter} />
+          {!postcollection && <div className='flex flex-wrap items-center justify-center m-4'><Loading /></div>}
+          {postcollection?.map((post, key) => (<PostCard key={key} {...post} />))}
 
-      </div>
+        </div>
+      </UserContext.Provider>
+
     </Layout >
 
   )
