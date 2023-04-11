@@ -6,9 +6,11 @@ import LoginPage from "./login";
 import { Layout } from "@/Components/profilePage/layout";
 import { useEffect, useState } from "react";
 import { Loading } from "@/Components/simpleCompo/loading";
-import TimeAgo from 'javascript-time-ago'
-import en from 'javascript-time-ago/locale/en.json'
-TimeAgo.addDefaultLocale(en)
+// import TimeAgo from 'javascript-time-ago';
+// import en from 'javascript-time-ago/locale/en';
+
+// // // Register the "en" locale data
+// TimeAgo.addDefaultLocale(en);
 
 export default function Home() {
   const session = useSession();
