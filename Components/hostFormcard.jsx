@@ -30,7 +30,7 @@ export const FormCard = (props) => {
         setSuccess(false);
         if (content.length > 1) {
             setError(0);
-            supabase.from('posts').insert({ Content: content, author: session.user.id })
+            supabase.from('posts').insert({ Content: content, author: session.user.id, photos: uploads })
                 .then(response => {
                     if (!response.error) {
                         if (props.onposting) {
@@ -38,6 +38,7 @@ export const FormCard = (props) => {
                         }
                         setcontent('');
                         setSuccess(true);
+                        setUploads([]);
                     }
 
                 });
@@ -52,6 +53,7 @@ export const FormCard = (props) => {
     //Function to add the phots
     async function addphotos(e) {
         const files = e.target.files;
+
         if (files.length > 0) {
             setIsuploading(true);
             for (const fs of files) {
@@ -87,10 +89,13 @@ export const FormCard = (props) => {
 
             </div>
 
+            {uploads.length == 0 && <div className="flex gap-2">
+                {Isuploading && <ScaleLoader color="#36d7b7" />}
+            </div>}
             {uploads.length > 0 && (
                 <div className="flex gap-2">
-                    {uploads.map(upload => (
-                        <div className="mt-2" >
+                    {uploads.map((upload, index) => (
+                        <div key={index} className="mt-2" >
                             <img src={upload} alt="" className="w-auto h-24 rounded-md" />
 
                         </div>

@@ -38,7 +38,7 @@ export default function Home() {
   if (!session) return (<LoginPage />)
 
   function fetchposter() {
-    supabase.from('posts').select('id,Content,created_at,profiles(id,avatar,name)').order('created_at', { ascending: false }).then(result => {
+    supabase.from('posts').select('id,Content,created_at,photos,profiles(id,avatar,name)').order('created_at', { ascending: false }).then(result => {
       setpostcollection(result.data)
     })
   }

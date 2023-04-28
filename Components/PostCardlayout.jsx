@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Card } from './card';
 import TimeAgo from "react-timeago";
 import { UserContext } from './Contexts/UserContext';
+import photos from '@/pages/profile/photos';
 
 
 export const PostCard = (props) => {
@@ -25,11 +26,17 @@ export const PostCard = (props) => {
                     {boxer ? <Moreon /> : <></>}
                 </div>
             </div>
-            <div className="my-3 mx-3 p-4">
+            <div className="my-3 mx-3 p-4 flex flex-wrap flex-col ">
                 <p>{props.Content}</p>
-                {/* <div className='m-3'>
-                    <img alt='landscape' src="https://images.unsplash.com/photo-1492666673288-3c4b4576ad9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" />
-                </div> */}
+                <div className='flex flex-wrap flex-row '>
+                    {props.photos?.length > 0 && props.photos?.map((photo, index) => (
+                        <div key={index} className='m-3 h-[150px] w-[200px]  rounded-md '>
+                            <img alt='landscape' src={photo} className=' h-full w-full object-contain ' />
+                        </div>
+                    ))}
+                </div>
+
+                {/*  */}
             </div>
             <div className='flex flex-wrap items-center  mt-3 gap-4'>
                 <button className='flex flex-wrap items-center justify-center p-2 gap-1'>72</button>
