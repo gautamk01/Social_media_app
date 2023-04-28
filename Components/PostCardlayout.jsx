@@ -17,8 +17,8 @@ export const PostCard = (props) => {
         <Card>
             <div className="flex flex-row gap-3 ">
                 <div >
-                    <Link href={'/'}><span className=' cursor-pointer'><Avatar url={props?.profiles?.avatar} /></span></Link></div>
-                <div className='grow'><p><Link href={'/'} className="font-semibold cursor-pointer hover:underline">{props?.profiles?.name}</Link> Shared a <a className=" text-cyan-500"> Post</a></p>
+                    <Link href={'/profile/' + props?.profiles?.id}><span className=' cursor-pointer'><Avatar url={props?.profiles?.avatar} /></span></Link></div>
+                <div className='grow'><p><Link href={'/profile/' + props?.profiles?.id} className="font-semibold cursor-pointer hover:underline">{props?.profiles?.name}</Link> Shared a <a className=" text-cyan-500"> Post</a></p>
                     <p className="Text-gray-500">{
                         <TimeAgo date={props?.created_at} />
                     }</p></div>
@@ -30,8 +30,8 @@ export const PostCard = (props) => {
                 <p>{props.Content}</p>
                 <div className='flex flex-wrap flex-row '>
                     {props.photos?.length > 0 && props.photos?.map((photo, index) => (
-                        <div key={index} className='m-3 h-[150px] w-[200px]  rounded-md '>
-                            <img alt='landscape' src={photo} className=' h-full w-full object-contain ' />
+                        <div key={index} className='m-3 h-[150px] w-[200px]  rounded-md bg-black '>
+                            <img alt='landscape' src={photo} className=' h-full w-full object-cover rounded-lg ' />
                         </div>
                     ))}
                 </div>

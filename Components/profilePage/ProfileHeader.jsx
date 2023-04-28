@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BsFilePostFill } from 'react-icons/bs'
 import { CiCircleAlert } from 'react-icons/ci'
 import { FaUserFriends } from 'react-icons/fa'
@@ -7,10 +7,30 @@ import { Avatar } from '@/Components/Avatar'
 import { Card } from '@/Components/card'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
+import { useState } from 'react';
+import { useSupabaseClient } from '@supabase/auth-helpers-react';
 
 export const ProfileHeader = () => {
     const router = useRouter();
+    const [profile, setProfile] = useState(null);
     const { pathname } = router;
+    const userid = router.query.id;
+    const supabase = useSupabaseClient();
+
+    useEffect(() => {
+        if (!userid) { return }
+        supabase.from('profiles').select().eq('id', userid).then(response => {
+            if (response.error) {
+                console.log(response.error);
+            }
+            if (response.data) {
+                setProfile(response.data[0]);
+            }
+        })
+    }, [userid]);
+
+
+
     const ispost = pathname.includes('posts') || pathname === '/profile'
     const isabout = pathname.includes('about')
     const isfriends = pathname.includes('friends')
@@ -21,13 +41,13 @@ export const ProfileHeader = () => {
 
         <Card nopadding={true}>
             <div className='z-10 h-44 overflow-hidden flex flex-wrap items-center justify-center '>
-                <image className='  relative bottom-20' src='https://images.unsplash.com/photo-1614102073832-030967418971?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' />
+                {/* <image className='  relative bottom-20' src='https://images.unsplash.com/photo-1614102073832-030967418971?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' /> */}
             </div>
             <div className="flex ">
                 <div className=' z-20 relative bottom-14 p-4  h-10 '>
-                    <Avatar size={'w-24 h-24'} /></div>
+                    <Avatar url={profile?.avatar} size={'w-24 h-24'} /></div>
                 <div className='p-4 '>
-                    <h1 className=' font-extrabold'>John Doe</h1>
+                    <h1 className=' font-extrabold'>{profile?.name}</h1>
                     <p className=' text-sm text-gray-400 '>Stockholm, sweden</p></div>
             </div>
             <div className='flex flex-wrap flex-row gap-4 px-5   items-center'>

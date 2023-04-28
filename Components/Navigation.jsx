@@ -26,7 +26,7 @@ export const Navigation = () => {
                 <Link href="/profile/friends" className={pathname === '/profile/friends' ? activeElementClasses : nonactiveElementClasses}><FaUserFriends className="mr-1" />Friends</Link>
                 <Link href="" className={nonactiveElementClasses}><BsFilePostFill className="mr-1" />Save Post</Link>
                 <Link href="/notification" className={pathname === '/notification' ? activeElementClasses : nonactiveElementClasses}><GrNotification className="mr-1 " />Notification</Link>
-                <button onClick={logout} className={nonactiveElementClasses}><span className='flex items-center px-2 w-[210px]'><GrLogout className="mr-1" />Log out</span></button>
+                <Link href="/"><button onClick={logout} className={nonactiveElementClasses}><span className='flex items-center px-2 w-[210px]'><GrLogout className="mr-1" />Log out</span></button></Link>
             </div>
         </Card >
     )
