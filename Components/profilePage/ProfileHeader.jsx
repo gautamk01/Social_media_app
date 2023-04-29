@@ -8,7 +8,8 @@ import { Card } from '@/Components/card'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import CoverPage from '../simpleCompo/cover';
 
 export const ProfileHeader = () => {
     const router = useRouter();
@@ -16,6 +17,8 @@ export const ProfileHeader = () => {
     const { pathname } = router;
     const userid = router.query.id;
     const supabase = useSupabaseClient();
+    const session = useSession();
+
 
     useEffect(() => {
         if (!userid) { return }
@@ -37,18 +40,19 @@ export const ProfileHeader = () => {
     const isphotos = pathname.includes('photos')
     const tabClasses = '';
     const activetabClass = 'border-b-4 border-blue-300 text-blue-400';
+
+
+    const isMYUser = userid === session?.user?.id;
     return (
 
         <Card nopadding={true}>
-            <div className='z-10 h-44 overflow-hidden flex flex-wrap items-center justify-center '>
-                {/* <image className='  relative bottom-20' src='https://images.unsplash.com/photo-1614102073832-030967418971?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' /> */}
-            </div>
+            <CoverPage url={profile?.cover} editable={isMYUser} />
             <div className="flex ">
                 <div className=' z-20 relative bottom-14 p-4  h-10 '>
                     <Avatar url={profile?.avatar} size={'w-24 h-24'} /></div>
                 <div className='p-4 '>
-                    <h1 className=' font-extrabold'>{profile?.name}</h1>
-                    <p className=' text-sm text-gray-400 '>Stockholm, sweden</p></div>
+                    <h1 className=' font-extrabold uppercase'>{profile?.name}</h1>
+                    <p className=' text-sm text-gray-400 '>{profile?.city}</p></div>
             </div>
             <div className='flex flex-wrap flex-row gap-4 px-5   items-center'>
                 <Link href={'/profile/posts'} className={`flex mx-2 px-4 items-center ${ispost ? activetabClass : tabClasses}`}><BsFilePostFill />Posts</Link>
