@@ -1,12 +1,14 @@
-import { useSession } from '@supabase/auth-helpers-react';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 import React, { useEffect, useState } from 'react';
+import { Loading } from './loading';
 
 export default function CoverPage(props) {
     const [coverUrl, setCoverUrl] = useState(false);
     const [showEditor, setShowEditor] = useState(false);
+    const [isuploading, setisuploading] = useState(false);
     const [File, setFile] = useState(false);
-
-
+    const supabase = useSupabaseClient();
+    const session = useSession();
 
     const updateCover = (e) => {
         const file = e.target?.files[0];
@@ -22,10 +24,23 @@ export default function CoverPage(props) {
         setFile(file)
     };
 
-    const saveCover = () => {
-        // TODO: save the cover image
-        console.log(File)
+    async function saveCover() {
+        if (File) {
+            setisuploading(true)
+            const newName = Date.now() + File.name;
+            const { data, error } = await supabase.storage.from("covers").upload(newName, File);
+            setisuploading(false)
+            if (error) throw error
+            if (data) {
+                // console.log(data)
+                const url = process.env.NEXT_PUBLIC_SUPABASE_URL + '/storage/v1/object/public/covers/' + data.path;
+                supabase.from('profiles').update({ cover: url }).eq('id', session.user.id).then(({ data, error }) => {
+                    if (error) throw error;
+                })
+            }
+        }
         setShowEditor(false);
+
     };
 
     const cancelCover = () => {
@@ -53,6 +68,8 @@ export default function CoverPage(props) {
             {/* This is the Cover image */}
             <div className='z-10 h-44 relative overflow-hidden flex flex-wrap items-center justify-center'>
                 <img className='relative bottom-20' src={coverUrl ? coverUrl : props.url} />
+
+                {isuploading && <div className='absolute flex flex-wrap justify-center items-center bg-white inset-0 opacity-60'><Loading /></div>}
 
                 {props.editable && !showEditor && (
                     <label className='bg-white absolute right-0 bottom-0 m-1 p-1 px-2 rounded-sm shadow-md shadow-black cursor-pointer hover:bg-slate-100'>
