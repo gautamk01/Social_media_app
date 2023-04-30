@@ -1,0 +1,210 @@
+[33mcommit 2e20466fcace9633975dcaecc68dc2e173bedbc6[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: gautamk01 <charmingdeveloper@protonmail.com>
+Date:   Sun Apr 30 15:15:14 2023 +0530
+
+    Now you can change the Avatar of your Profile and The DataBase is also Fixed and Completed
+
+[33mcommit e729332edfde7c610e563b4028320e906018eb33[m
+Author: gautamk01 <charmingdeveloper@protonmail.com>
+Date:   Sun Apr 30 12:02:36 2023 +0530
+
+     now you can update the cover of your profile and Database is also completed
+
+[33mcommit f64e08313a2830ec5fdc06f21c47b74b0d8f2497[m
+Author: gautamk01 <charmingdeveloper@protonmail.com>
+Date:   Sun Apr 30 01:34:27 2023 +0530
+
+    Fixed some Bugs and added Some Feature like selecting the user Cover image Now I need to Step the Backend
+
+[33mcommit 7cf9e06b12e09c4ac1d000e59914515b92f6698d[m
+Author: gautamk01 <charmingdeveloper@protonmail.com>
+Date:   Fri Apr 28 12:16:04 2023 +0530
+
+    Fetch the data to the Profile page and fix the bug in logout button
+
+[33mcommit fc44cc09ccdeb4a5d93f42b305c9e7b2af6ef811[m
+Author: gautamk01 <charmingdeveloper@protonmail.com>
+Date:   Fri Apr 28 10:54:36 2023 +0530
+
+    I Have just Completed Added the Image on the Post and Fixing the Loading animation while adding an image in the user post Card
+
+[33mcommit 46a108d43b314a32e7c1406b05eeb81dcff6be87[m
+Author: gautamk01 <charmingdeveloper@protonmail.com>
+Date:   Wed Apr 12 20:07:44 2023 +0530
+
+    I added the Photo adding Feature to the code
+
+[33mcommit a4c1fceae5d609f18b3fa716673906c486578d27[m
+Author: gautamk01 <charmingdeveloper@protonmail.com>
+Date:   Tue Apr 11 15:39:24 2023 +0530
+
+    Fixed the Time Bug, Fixed message request error and then Added the Comment feature not working but still in shape
+
+[33mcommit 43c02cd9ebc481efa86dc8f83d0fbc01efcae983[m
+Author: gautamk01 <charmingdeveloper@protonmail.com>
+Date:   Tue Apr 11 11:46:58 2023 +0530
+
+    This Fixed the Time issue
+
+[33mcommit 9bc045eeb4a48c4af10d2edbf434524d910c34e3[m
+Author: gautamk01 <charmingdeveloper@protonmail.com>
+Date:   Tue Apr 11 00:07:37 2023 +0530
+
+    Just add the Time Feature to the website
+
+[33mcommit 59cdbcd1503ae6e850209e6093b35541b584d81d[m
+Author: gautamk01 <charmingdeveloper@protonmail.com>
+Date:   Mon Apr 10 23:03:26 2023 +0530
+
+    This is more required update
+
+[33mcommit 3fed8a8c7b733110fa5113595526873bac2f002e[m
+Author: Gautamk01 <l>
+Date:   Mon Apr 10 15:36:57 2023 +0530
+
+     I am happy
+
+[33mcommit 871d22f059755b4f1c21b17b30df0c81759b31af[m
+Author: Gautamk01 <l>
+Date:   Mon Apr 10 13:30:19 2023 +0530
+
+    f
+
+[33mcommit ae25b525921495c484dd6e38632557b820089ed3[m
+Merge: 86339f6 f082ed9
+Author: Gautamk01 <l>
+Date:   Mon Apr 10 13:28:36 2023 +0530
+
+    Merge branch 'main' of https://github.com/gautamk01/Social_media_app
+
+[33mcommit 86339f6e94f3674b1ba1cb9bb0be1c9e380978a9[m
+Author: Gautamk01 <l>
+Date:   Mon Apr 10 13:28:05 2023 +0530
+
+    This is small
+
+[33mcommit f082ed93e5ce678438f31d0750a231daa6b0a2bc[m
+Author: Gautam Krishna M <charmingdeveloper@protonmail.com>
+Date:   Mon Apr 10 12:45:36 2023 +0530
+
+    some
+
+[33mcommit afd74bb8a85962af6b8dee08f643c6309d565c93[m
+Author: Gautamk01 <l>
+Date:   Mon Apr 10 12:42:36 2023 +0530
+
+    This is important
+
+[33mcommit 81985526419ab0b8209258934aead38c03b298fd[m
+Author: Gautamk01 <l>
+Date:   Sun Apr 9 11:56:45 2023 +0530
+
+    SOme
+
+[33mcommit cf6169e965c95ee56cd4caf7d391f7821eb0d65b[m
+Author: Gautamk01 <l>
+Date:   Sun Apr 9 11:51:24 2023 +0530
+
+    SOme
+
+[33mcommit 0847646ae8291205a5d309e0f55f3ed8fbe1f480[m
+Author: Gautamk01 <l>
+Date:   Sat Apr 8 18:13:56 2023 +0530
+
+    There is some more to fix
+
+[33mcommit 5fda6867b37229a17380fefe95e8f1fcdc1d4e65[m
+Author: Gautamk01 <l>
+Date:   Sat Apr 8 18:12:05 2023 +0530
+
+    Fixed Bug as much as possible using Chat GPT thank you
+
+[33mcommit 8b15323a4b158ff484e396f1056c10eba7bd8061[m
+Author: Gautamk01 <l>
+Date:   Sat Apr 8 18:03:24 2023 +0530
+
+    There is some more to fix
+
+[33mcommit b8a69cb57f0e5db528391bb57a2c3c56cf40ce32[m
+Author: Gautamk01 <l>
+Date:   Sat Apr 8 17:53:41 2023 +0530
+
+    Fixed Bug as much as possible using Chat GPT thank you
+
+[33mcommit a83315717bbbd864760cf5f3f70a7456e0ce351f[m
+Author: Gautamk01 <l>
+Date:   Sat Apr 8 17:40:32 2023 +0530
+
+    Fixing the bug for deployment
+
+[33mcommit 508ffc41c2cbae69644040f9f4c2ca4cd2ffceaf[m
+Author: Gautamk01 <l>
+Date:   Sat Apr 8 17:33:25 2023 +0530
+
+    This is a new Thing
+
+[33mcommit 74dfee8096763efc3a4dbd1fc79da96c72fb6a10[m
+Author: Gautamk01 <l>
+Date:   Sat Apr 8 16:20:44 2023 +0530
+
+    Added the hostfromcard backend Feature and so excited to do more
+
+[33mcommit a5ab39920dd4a975a921c1c09b9159c9dd49d688[m
+Author: Gautamk01 <l>
+Date:   Fri Apr 7 14:16:48 2023 +0530
+
+    working on Backend Started, SO execited to complete it
+
+[33mcommit 417ad6675b924e0dd03076000654e6fe027fb729[m
+Author: Gautamk01 <l>
+Date:   Fri Apr 7 00:27:16 2023 +0530
+
+    Added Notification page and Login page need to wrok in backen tomorrow
+
+[33mcommit 6bef862a5e62daf00dacf922bc4b6b9af11e4f1a[m
+Author: Gautamk01 <l>
+Date:   Thu Apr 6 22:00:02 2023 +0530
+
+    Fix all Linking and added few New Pages
+
+[33mcommit bebff4e1bbf4c236c3efb5b804b1b823fcc5432b[m
+Author: Gautamk01 <l>
+Date:   Thu Apr 6 17:17:07 2023 +0530
+
+    Worked on the Profile Pages and some conceptes of Router
+
+[33mcommit 005475ca15531677e6b2ae150bd0e907d1948463[m
+Author: Gautamk01 <l>
+Date:   Thu Apr 6 15:07:42 2023 +0530
+
+    This was coder while I was travelling in train and I have completed the main page and need to work on profile
+
+[33mcommit 321fa9fd33994ae9c47c495f7eae970dc863fb43[m
+Author: Gautamk01 <l>
+Date:   Wed Apr 5 12:13:49 2023 +0530
+
+    Added some more feature and added new PostCard in the application
+
+[33mcommit eefc32c08be07fdcac34ed41ba08e4f7f0daf3e6[m
+Author: Gautamk01 <l>
+Date:   Wed Apr 5 07:47:16 2023 +0530
+
+    Added User Post Form
+
+[33mcommit f605fa4f0b72d41ac90b5a88c5cdced9e8aabdf1[m
+Author: Gautamk01 <l>
+Date:   Tue Apr 4 20:09:23 2023 +0530
+
+    This added some new thing Navigation bar and react icons
+
+[33mcommit f7c9724847ad8fe2b8a0ed92b5351846aac1dd7c[m
+Author: Gautamk01 <l>
+Date:   Tue Apr 4 18:52:36 2023 +0530
+
+    Just started the Application
+
+[33mcommit 42bf7b6d4c1b7621a296731fdfd22bfff8d1e53a[m
+Author: Gautamk01 <l>
+Date:   Tue Apr 4 18:47:46 2023 +0530
+
+    Initial commit from Create Next App
