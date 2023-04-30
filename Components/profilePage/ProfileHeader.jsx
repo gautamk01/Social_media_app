@@ -10,7 +10,9 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 import CoverPage from '../simpleCompo/cover';
+import { TbEdit } from 'react-icons/tb'
 
+import { AvatarUpdate } from '../simpleCompo/avatarupdate';
 export const ProfileHeader = () => {
     const router = useRouter();
     const [profile, setProfile] = useState(null);
@@ -47,12 +49,15 @@ export const ProfileHeader = () => {
 
         <Card nopadding={true}>
             <CoverPage url={profile?.cover} editable={isMYUser} />
-            <div className="flex ">
+            <div className="flex flex-wrap  ">
                 <div className=' z-20 relative bottom-14 p-4  h-10 '>
-                    <Avatar url={profile?.avatar} size={'w-24 h-24'} /></div>
-                <div className='p-4 '>
+                    {isMYUser ? <AvatarUpdate aurl={profile?.avatar} /> : <Avatar url={profile?.avatar} size={'w-24 h-24'} />}
+                </div>
+                <div className='p-4  grow '>
                     <h1 className=' font-extrabold uppercase'>{profile?.name}</h1>
                     <p className=' text-sm text-gray-400 '>{profile?.city}</p></div>
+                <div className=' bg-white h-[30px] m-1 p-1 px-2 rounded-sm shadow-md shadow-black cursor-pointer hover:bg-slate-100 flex flex-wrap gap-3 items-center'><TbEdit />Edit Profile</div>
+
             </div>
             <div className='flex flex-wrap flex-row gap-4 px-5   items-center'>
                 <Link href={'/profile/posts'} className={`flex mx-2 px-4 items-center ${ispost ? activetabClass : tabClasses}`}><BsFilePostFill />Posts</Link>
@@ -61,6 +66,6 @@ export const ProfileHeader = () => {
                 <Link href={'/profile/photos'} className={`flex mx-2  px-4 items-center ${isphotos ? activetabClass : tabClasses}`}><IoMdPhotos />Photos</Link>
             </div>
 
-        </Card>
+        </Card >
     )
 }
