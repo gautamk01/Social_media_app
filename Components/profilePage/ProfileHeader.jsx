@@ -13,10 +13,9 @@ import CoverPage from '../simpleCompo/cover';
 
 import { AvatarUpdate } from '../simpleCompo/avatarupdate';
 import { EditForm } from '../simpleCompo/editform';
-export const ProfileHeader = () => {
+export const ProfileHeader = (props) => {
     const router = useRouter();
     const [profile, setProfile] = useState(null);
-    const { pathname } = router;
     const userid = router.query.id;
     const supabase = useSupabaseClient();
     const session = useSession();
@@ -36,15 +35,14 @@ export const ProfileHeader = () => {
 
 
 
-    const ispost = pathname.includes('posts') || pathname === '/profile'
-    const isabout = pathname.includes('about')
-    const isfriends = pathname.includes('friends')
-    const isphotos = pathname.includes('photos')
+
     const tabClasses = '';
     const activetabClass = 'border-b-4 border-blue-300 text-blue-400';
-
+    const tab = router?.query?.tabs?.[0]
+    props.mytab(tab);
 
     const isMYUser = userid === session?.user?.id;
+
     return (
 
         <Card nopadding={true}>
@@ -59,10 +57,10 @@ export const ProfileHeader = () => {
 
             </div>
             <div className='flex flex-wrap flex-row gap-4 px-5   items-center'>
-                <Link href={'/profile/posts'} className={`flex mx-2 px-4 items-center ${ispost ? activetabClass : tabClasses}`}><BsFilePostFill />Posts</Link>
-                <Link href={'/profile/about'} className={`flex mx-2 px-4 items-center ${isabout ? activetabClass : tabClasses}`}><CiCircleAlert className='  text-black' />About</Link>
-                <Link href={'/profile/friends'} className={`flex mx-2 px-4 items-center ${isfriends ? activetabClass : tabClasses}`}><FaUserFriends />Friends</Link>
-                <Link href={'/profile/photos'} className={`flex mx-2  px-4 items-center ${isphotos ? activetabClass : tabClasses}`}><IoMdPhotos />Photos</Link>
+                <Link href={`/profile/${userid}/posts`} className={`flex mx-2 px-4 items-center ${tab === 'posts' ? activetabClass : tabClasses}`}><BsFilePostFill />Posts</Link>
+                <Link href={`/profile/${userid}/about`} className={`flex mx-2 px-4 items-center ${tab === 'about' ? activetabClass : tabClasses}`}><CiCircleAlert className='  text-black' />About</Link>
+                <Link href={`/profile/${userid}/friends`} className={`flex mx-2 px-4 items-center ${tab === 'friends' ? activetabClass : tabClasses}`}><FaUserFriends />Friends</Link>
+                <Link href={`/profile/${userid}/photos`} className={`flex mx-2  px-4 items-center ${tab === 'photos' ? activetabClass : tabClasses}`}><IoMdPhotos />Photos</Link>
             </div>
 
         </Card >

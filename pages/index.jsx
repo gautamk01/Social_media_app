@@ -1,9 +1,9 @@
 
 import { FormCard } from "@/Components/hostFormcard";
-import { PostCard } from "@/Components/PostCardlayout";
+import { PostCard } from "@/Components/profilePage/PostCardlayout";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import LoginPage from "./login";
-import { Layout } from "@/Components/profilePage/layout";
+import { Layout } from "@/Components/simpleCompo/layout";
 import { useEffect, useState } from "react";
 import { Loading } from "@/Components/simpleCompo/loading";
 import { UserContext } from "@/Components/Contexts/UserContext";

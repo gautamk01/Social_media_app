@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { Avatar } from './Avatar'
+import { Avatar } from '../Avatar'
 import { BsPeople } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
-import { Moreon } from './morecomp';
+import { Moreon } from '../morecomp';
 import Link from 'next/link';
-import { Card } from './card';
+import { Card } from '../card';
 import TimeAgo from "react-timeago";
-import { UserContext } from './Contexts/UserContext';
+import { UserContext } from '../Contexts/UserContext';
 import photos from '@/pages/profile/photos';
 
 

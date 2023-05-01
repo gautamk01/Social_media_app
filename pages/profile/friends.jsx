@@ -1,6 +1,6 @@
 import React from 'react'
 import { ProfileHeader } from '@/Components/profilePage/ProfileHeader'
-import { Layout } from '@/Components/profilePage/layout'
+import { Layout } from '@/Components/simpleCompo/layout'
 import { Card } from '@/Components/card'
 import { Avatar } from '@/Components/Avatar'
 import { FriendInfo } from '@/Components/profilePage/friendInfo'

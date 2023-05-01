@@ -1,6 +1,6 @@
 import { Avatar } from '@/Components/Avatar'
 import { Card } from '@/Components/card'
-import { Layout } from '@/Components/profilePage/layout'
+import { Layout } from '@/Components/simpleCompo/layout'
 import Link from 'next/link'
 import React from 'react'
 
