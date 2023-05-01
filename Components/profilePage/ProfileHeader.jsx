@@ -38,7 +38,7 @@ export const ProfileHeader = (props) => {
 
     const tabClasses = '';
     const activetabClass = 'border-b-4 border-blue-300 text-blue-400';
-    const tab = router?.query?.tabs?.[0]
+    const tab = router?.query?.tabs?.[0] || 'posts'
     props.mytab(tab);
 
     const isMYUser = userid === session?.user?.id;

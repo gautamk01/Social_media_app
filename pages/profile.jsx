@@ -11,7 +11,7 @@ import { FriendInfo } from '@/Components/profilePage/friendInfo'
 
 export default function Profile() {
 
-  const [mytab, setmytab] = useState('post')
+  const [mytab, setmytab] = useState('posts')
   function pulldata(d) {
     setmytab(d)
   }
