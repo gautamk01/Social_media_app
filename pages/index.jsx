@@ -34,7 +34,7 @@ export default function Home() {
     })
   }, [session?.user?.id]);
 
-
+  console.log(Profile)
   if (!session) return (<LoginPage />)
 
   function fetchposter() {
